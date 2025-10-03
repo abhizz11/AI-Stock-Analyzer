@@ -20,7 +20,6 @@ class ReportGenerator:
         dcf_summary = f"The DCF model estimates a fair value of ${dcf_results.get('DCF Fair Value per Share', 0):.2f}, suggesting a potential upside/downside of {dcf_results.get('Upside/Downside (%)', 0):.2f}% from the current price of ${dcf_results.get('Current Market Price', 0):.2f}."
         tech_summary = f"The current RSI is {tech_indicators.get('RSI', 0):.2f}. The price is trading relative to its 50-day SMA and 200-day SMA."
 
-        # The rest of the prompt remains the same
         prompt = f"""
         **INVESTMENT MEMORANDUM**
 
@@ -61,3 +60,4 @@ class ReportGenerator:
             messages=[{'role': 'user', 'content': prompt}]
         )
         return response['message']['content']
+
