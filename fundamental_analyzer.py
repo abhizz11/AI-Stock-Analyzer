@@ -3,7 +3,7 @@
 import yfinance as yf
 import pandas as pd
 import ollama
-import re  # <<< NEW: Import the regular expression library
+import re
 from verification_prints import print_fundamental_ratios, print_dcf_inputs
 
 
@@ -91,9 +91,6 @@ class FundamentalAnalyzer:
             return self.cash_flow.loc['Free Cash Flow'].pct_change().mean()
 
     def _calculate_wacc(self):
-        # This function was correct and does not need changes
-        # ... (full code for this function remains here)
-        # --- Cost of Equity (using CAPM model) ---
         # Default to 1.0 if beta is not available
         beta = self.info.get('beta', 1.0)
         market_return = 0.08  # Assumed long-term market return
@@ -130,8 +127,6 @@ class FundamentalAnalyzer:
         return wacc, wacc_inputs
 
     def perform_dcf_analysis(self):
-        # This function was correct and does not need changes
-        # ... (full code for this function remains here)
         print("\nPerforming and Verifying Multi-Stage Dynamic DCF Analysis...")
         try:
             five_year_growth_rate = self._get_industry_growth_rate()
@@ -162,3 +157,4 @@ class FundamentalAnalyzer:
             return {"DCF Fair Value per Share": dcf_fair_value_per_share, "Current Market Price": current_price, "Upside/Downside (%)": ((dcf_fair_value_per_share / current_price) - 1) * 100}
         except Exception as e:
             return {"Error": f"Could not perform DCF. Data might be missing or invalid. Error: {e}"}
+
