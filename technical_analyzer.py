@@ -3,7 +3,7 @@
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
-from verification_prints import print_technical_indicators  # Import our new function
+from verification_prints import print_technical_indicators 
 
 
 class TechnicalAnalyzer:
@@ -16,7 +16,6 @@ class TechnicalAnalyzer:
         """Calculates and PRINTS a suite of advanced technical indicators."""
         print("Calculating and Verifying Technical Indicators...")
 
-        # ... (all calculation logic remains the same)
         self.data['SMA50'] = self.data['Close'].rolling(window=50).mean()
         self.data['SMA200'] = self.data['Close'].rolling(window=200).mean()
         delta = self.data['Close'].diff()
@@ -33,13 +32,11 @@ class TechnicalAnalyzer:
 
         latest_indicators = self.data.iloc[-1]
 
-        # <<< NEW: Call the verification printer >>>
         print_technical_indicators(latest_indicators)
 
         return latest_indicators
 
     def plot_charts(self):
-        # ... (this function does not need to change)
         print("Generating technical charts... Please close plots to continue.")
         plt.figure(figsize=(15, 10))
         plt.subplot(2, 1, 1)
@@ -64,3 +61,4 @@ class TechnicalAnalyzer:
         plt.legend()
         plt.tight_layout()
         plt.show()
+
