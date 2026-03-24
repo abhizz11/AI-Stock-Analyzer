@@ -58,6 +58,7 @@ The script's workflow is divided into four distinct modules, each representing a
 4. **Get the Final report. Check for {TICKER}_investment_memo.txt in the same directory.**
 
 ## Project Structure
+```text
 .
 ├── main.py                  # Main entry point to run the analysis workflow.
 ├── fundamental_analyzer.py  # Handles ratio calculations and DCF analysis.
@@ -65,6 +66,7 @@ The script's workflow is divided into four distinct modules, each representing a
 ├── context_analyzer.py      # Uses LLM to analyze macro and industry context.
 ├── reporting.py             # Uses LLM to synthesize all data into a final memo.
 └── verification_prints.py   # Helper functions to print verifiable model inputs.
+```
 
 ## Disclaimer
 This tool is for educational and informational purposes only. It is not financial advice. The analyses and recommendations generated are based on publicly available data and automated models, which may contain errors or inaccuracies. Always conduct your own thorough research and consult with a qualified financial advisor before making any investment decisions.
